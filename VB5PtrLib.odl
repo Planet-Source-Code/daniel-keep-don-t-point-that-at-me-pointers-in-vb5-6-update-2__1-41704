@@ -1,0 +1,15 @@
+#define RTCALL _stdcall
+[
+uuid(6E814F00-7439-11D2-98D2-00C04FAD90E7),
+lcid (0), version(5.0), helpstring("StrPtrArray Support for VB5")
+]
+library PtrLib
+{
+importlib ("stdole2.tlb");
+[dllname("msvbvm50.dll")]
+module ArrayPtr
+   {
+   [entry("VarPtr")]
+   long RTCALL StrPtrArray([in] SAFEARRAY (BSTR) *Ptr);
+   }
+}
